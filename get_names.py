@@ -1,12 +1,9 @@
-import codecs
 import copy
 import sys
 import pandas as pd
 import requests
 from io import StringIO
 
-
-INPUT_CODEC = 'cp1252'
 
 LAST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/START/BE/BE0001/BE0001ENamn10"
 FIRST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/START/BE/BE0001/BE0001FNamn10"
