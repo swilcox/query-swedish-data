@@ -111,8 +111,8 @@ def _get_name_data(name_type):
     df[['count']] = df[[name_type['count_field']]].apply(pd.to_numeric, errors='coerce')
     df.rename(columns={name_type['name_field']: 'name_value'}, inplace=True)
     df.sort_values(['count'], ascending=[False], inplace=True)
-    df = df[0:MAX_NAMES]
     total = df['count'].sum()
+    df = df[0:MAX_NAMES]
     df['percent'] = df['count'] / total
     df.sort_values(['name_value'], inplace=True)
     return df
