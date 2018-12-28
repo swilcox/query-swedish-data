@@ -4,9 +4,8 @@ import pandas as pd
 import requests
 from io import StringIO
 
-
-LAST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/START/BE/BE0001/BE0001ENamn10"
-FIRST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/START/BE/BE0001/BE0001FNamn10"
+FIRST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0001/BE0001G/BE0001FNamn10"
+LAST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0001/BE0001G/BE0001ENamn10"
 
 YEAR = 1999
 MAX_NAMES = 200
