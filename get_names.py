@@ -4,9 +4,8 @@ import pandas as pd
 import requests
 from io import StringIO
 
-
-LAST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/START/BE/BE0001/BE0001ENamn10"
-FIRST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/START/BE/BE0001/BE0001FNamn10"
+FIRST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0001/BE0001G/BE0001FNamn10"
+LAST_NAME_URL = "http://api.scb.se/OV0104/v1/doris/en/ssd/BE/BE0001/BE0001G/BE0001ENamn10"
 
 YEAR = 1999
 MAX_NAMES = 200
@@ -111,8 +110,8 @@ def _get_name_data(name_type):
     df[['count']] = df[[name_type['count_field']]].apply(pd.to_numeric, errors='coerce')
     df.rename(columns={name_type['name_field']: 'name_value'}, inplace=True)
     df.sort_values(['count'], ascending=[False], inplace=True)
-    df = df[0:MAX_NAMES]
     total = df['count'].sum()
+    df = df[0:MAX_NAMES]
     df['percent'] = df['count'] / total
     df.sort_values(['name_value'], inplace=True)
     return df
