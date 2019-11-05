@@ -16,7 +16,7 @@ I needed to grab Swedish name data to submit to as an enhancement to the Python 
 ## Running
 
 * Use a virtualenv of some kind!
-* Use Python 3.x (tested only with 3.6.x)
+* Use Python 3.x (tested only with 3.6.x and 3.7.x)
 * `pip install -r requirements.txt`
 
 ```
